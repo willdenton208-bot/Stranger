@@ -209,3 +209,26 @@ nav a:hover {
 .subtitle {
   color: #666;
   margin-top: -
+.explore-box {
+  width: 220px;
+  margin: 30px auto;
+  padding: 18px;
+  background: #1e90ff;
+  border-radius: 12px;
+  text-align: center;
+  animation: floatBox 3s ease-in-out infinite;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.explore-box a {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@keyframes floatBox {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
