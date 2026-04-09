@@ -183,21 +183,32 @@ footer {
     padding: 20px;
   }
 }
-.logo-container {
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 10px;
+.logo {
+  width: 140px;
+  border-radius: 50%;
+  animation: fadeIn 1s ease forwards;
+  filter: 
+    drop-shadow(0 0 6px rgba(255, 215, 0, 0.6))
+    drop-shadow(0 0 12px rgba(255, 215, 0, 0.4))
+    drop-shadow(0 0 20px rgba(255, 215, 0, 0.25));
+}
+@keyframes pulseGlow {
+  0% { filter: drop-shadow(0 0 6px gold); }
+  50% { filter: drop-shadow(0 0 14px gold); }
+  100% { filter: drop-shadow(0 0 6px gold); }
 }
 
 .logo {
-  width: 140px; /* adjust size if needed */
+  animation: fadeIn 1s ease forwards, pulseGlow 4s ease-in-out infinite;
+}
+@keyframes pulseGlow {
+  0% { filter: drop-shadow(0 0 6px gold); }
+  50% { filter: drop-shadow(0 0 14px gold); }
+  100% { filter: drop-shadow(0 0 6px gold); }
+}
+.logo {
+  width: 140px;
   border-radius: 50%;
-  animation: fadeIn 1s ease forwards;
+  animation: fadeIn 1s ease forwards, pulseGlow 4s ease-in-out infinite;
 }
-
-/* Smooth fade-in animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
+animation: fadeIn 1s ease forwards, pulseGlow 4s ease-in-out infinite;
