@@ -1,0 +1,185 @@
+/* ------------------------------
+   GLOBAL RESET
+------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", system-ui, sans-serif;
+  background: #faf7ff;
+  color: #1f1f1f;
+  line-height: 1.7;
+  padding-bottom: 60px;
+}
+
+/* ------------------------------
+   NAVIGATION
+------------------------------ */
+nav {
+  width: 100%;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  background: #ffffffaa;
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: #6b5cff;
+}
+
+/* ------------------------------
+   PAGE WRAPPER
+------------------------------ */
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+/* ------------------------------
+   HOMEPAGE HERO
+------------------------------ */
+.hero {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+.hero p {
+  margin-top: 12px;
+  color: #666;
+  font-size: 1.05rem;
+}
+
+/* ------------------------------
+   ARTICLE LIST (BOXES)
+------------------------------ */
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 30px;
+  padding: 0 10px;
+}
+
+.article-list a {
+  display: block;
+  padding: 18px 20px;
+  background: #ffffff;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #1f1f1f;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* Staggered animation delays */
+.article-list a:nth-child(1) { animation-delay: 0.05s; }
+.article-list a:nth-child(2) { animation-delay: 0.15s; }
+.article-list a:nth-child(3) { animation-delay: 0.25s; }
+.article-list a:nth-child(4) { animation-delay: 0.35s; }
+.article-list a:nth-child(5) { animation-delay: 0.45s; }
+.article-list a:nth-child(6) { animation-delay: 0.55s; }
+
+.article-list a:hover {
+  background: #f0ebff;
+  transform: translateY(-3px);
+  transition: 0.2s ease;
+}
+
+/* Animation keyframes */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------------------
+   ARTICLE PAGE
+------------------------------ */
+.article-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: left;
+}
+
+.article-page h1 {
+  font-size: 1.9rem;
+  margin-bottom: 10px;
+}
+
+.article-page .subtitle {
+  color: #666;
+  margin-bottom: 24px;
+}
+
+article {
+  background: #fff;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+article p {
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+footer {
+  text-align: center;
+  margin-top: 60px;
+  color: #777;
+  font-size: 0.9rem;
+  padding-bottom: 20px;
+}
+
+/* ------------------------------
+   MOBILE TWEAKS
+------------------------------ */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .article-list a {
+    padding: 16px 16px;
+    font-size: 0.95rem;
+  }
+
+  article {
+    padding: 20px;
+  }
+}
