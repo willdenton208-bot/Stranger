@@ -183,3 +183,21 @@ footer {
     padding: 20px;
   }
 }
+.logo-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.logo {
+  width: 140px; /* adjust size if needed */
+  border-radius: 50%;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
