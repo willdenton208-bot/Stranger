@@ -2,13 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Articles — Stranger</title>
+  <title>Stranger — Articles</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- Navigation -->
+  <!-- LOGO -->
+  <div class="logo-container">
+    <img src="logo.png" alt="Stranger Logo" class="logo">
+  </div>
+
+  <!-- NAVIGATION -->
   <nav>
     <a href="index.html">Home</a>
     <a href="articles.html">Articles</a>
@@ -16,25 +21,40 @@
     <a href="translation.html">Translation</a>
   </nav>
 
-  <div class="page">
+  <!-- PAGE CONTENT -->
+  <div class="article-page">
+    <h1>Articles</h1>
+    <p class="subtitle">Explore topics that help you understand yourself and others.</p>
 
-    <div class="hero">
-      <h1>Articles</h1>
-      <p>Gentle reflections for overwhelmed hearts.</p>
-    </div>
-
-    <!-- Article Boxes -->
     <div class="article-list">
-      <a href="article-neurodiversity.html">Exploring Neurodiversity</a>
-      <a href="article-anxiety.html">Understanding Anxiety</a>
-      <a href="article-women.html">Women in the Bible</a>
-      <a href="article-adhd.html">ADHD & Faith</a>
-      <a href="article-dyslexia.html">Living with Dyslexia</a>
-      <a href="article-autism.html">Autism & Identity</a>
-    </div>
 
+      <!-- ARTICLE 1 -->
+      <div class="article-card">
+        <h2>Understanding Neurodiversity</h2>
+        <p>A gentle guide to how different brains work in different ways.</p>
+        <a href="article-neurodiversity.html" class="read-more">Read more</a>
+      </div>
+
+      <!-- ARTICLE 2 -->
+      <div class="article-card">
+        <h2>Understanding Anxiety</h2>
+        <p>What anxiety feels like, why it happens, and how to understand it.</p>
+        <a href="article-anxiety.html" class="read-more">Read more</a>
+      </div>
+
+      <!-- ADD MORE ARTICLES HERE -->
+      <!-- Example:
+      <div class="article-card">
+        <h2>Understanding ADHD</h2>
+        <p>A simple explanation of attention differences and how they affect life.</p>
+        <a href="article-adhd.html" class="read-more">Read more</a>
+      </div>
+      -->
+
+    </div>
   </div>
 
+  <!-- FOOTER -->
   <footer>
     Stranger © 2026 — Created with care
   </footer>
