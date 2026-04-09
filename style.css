@@ -1,189 +1,70 @@
 /* ------------------------------
-   GLOBAL RESET
+   GLOBAL PAGE STYLING
 ------------------------------ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body {
-  font-family: "Nunito", system-ui, sans-serif;
-  background: #faf7ff;
-  color: #1f1f1f;
-  line-height: 1.7;
-  padding-bottom: 60px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #222;
+}
+
+/* ------------------------------
+   LOGO + ANIMATION
+------------------------------ */
+
+.logo-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.logo {
+  width: 140px;
+  border-radius: 50%;
+  animation: fadeIn 1s ease forwards, pulseGlow 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.6))
+          drop-shadow(0 0 12px rgba(255, 215, 0, 0.4))
+          drop-shadow(0 0 20px rgba(255, 215, 0, 0.25));
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulseGlow {
+  0% { filter: drop-shadow(0 0 6px gold); }
+  50% { filter: drop-shadow(0 0 14px gold); }
+  100% { filter: drop-shadow(0 0 6px gold); }
 }
 
 /* ------------------------------
    NAVIGATION
 ------------------------------ */
+
 nav {
-  width: 100%;
-  padding: 16px 24px;
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  background: #ffffffaa;
-  backdrop-filter: blur(6px);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  text-align: center;
+  margin-top: 15px;
 }
 
 nav a {
+  margin: 0 12px;
   text-decoration: none;
-  color: #444;
-  font-weight: 600;
-  font-size: 0.95rem;
+  color: #333;
+  font-weight: bold;
 }
 
 nav a:hover {
-  color: #6b5cff;
-}
-
-/* ------------------------------
-   PAGE WRAPPER
------------------------------- */
-.page {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 32px 20px;
-}
-
-/* ------------------------------
-   HOMEPAGE HERO
------------------------------- */
-.hero {
-  text-align: center;
-  margin-top: 60px;
-  margin-bottom: 40px;
-  padding: 0 20px;
-}
-
-.hero h1 {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #1f1f1f;
-}
-
-.hero p {
-  margin-top: 12px;
-  color: #666;
-  font-size: 1.05rem;
-}
-
-/* ------------------------------
-   ARTICLE LIST (BOXES)
------------------------------- */
-.article-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 30px;
-  padding: 0 10px;
-}
-
-.article-list a {
-  display: block;
-  padding: 18px 20px;
-  background: #ffffff;
-  border-radius: 14px;
-  text-decoration: none;
-  color: #1f1f1f;
-  font-weight: 600;
-  font-size: 1rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-
-  /* Animation */
-  opacity: 0;
-  transform: translateY(15px);
-  animation: fadeUp 0.6s ease forwards;
-}
-
-/* Staggered animation delays */
-.article-list a:nth-child(1) { animation-delay: 0.05s; }
-.article-list a:nth-child(2) { animation-delay: 0.15s; }
-.article-list a:nth-child(3) { animation-delay: 0.25s; }
-.article-list a:nth-child(4) { animation-delay: 0.35s; }
-.article-list a:nth-child(5) { animation-delay: 0.45s; }
-.article-list a:nth-child(6) { animation-delay: 0.55s; }
-
-.article-list a:hover {
-  background: #f0ebff;
-  transform: translateY(-3px);
-  transition: 0.2s ease;
-}
-
-/* Animation keyframes */
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ------------------------------
-   ARTICLE PAGE
------------------------------- */
-.article-page {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  text-align: left;
-}
-
-.article-page h1 {
-  font-size: 1.9rem;
-  margin-bottom: 10px;
-}
-
-.article-page .subtitle {
-  color: #666;
-  margin-bottom: 24px;
-}
-
-article {
-  background: #fff;
-  padding: 24px;
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-}
-
-article p {
-  margin-bottom: 16px;
-  font-size: 1rem;
-}
-
-/* ------------------------------
-   FOOTER
------------------------------- */
-footer {
-  text-align: center;
-  margin-top: 60px;
   color: #777;
-  font-size: 0.9rem;
-  padding-bottom: 20px;
 }
 
 /* ------------------------------
-   MOBILE TWEAKS
+   HOME PAGE BACKGROUND OPTIONS
 ------------------------------ */
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.6rem;
-  }
 
-  .article-list a {
-    padding: 16px 16px;
-    font-size: 0.95rem;
-  }
-
-  article {
-    padding: 20px;
-  }
-}
-
+/* 1) NORMAL BACKGROUND */
 .home-background {
   background-image: url('garden.jpg');
   background-size: cover;
@@ -194,16 +75,138 @@ footer {
   margin-top: 20px;
 }
 
-nfinite;
+/* 2) DARKER BACKGROUND */
+.home-background-dark {
+  position: relative;
+  background-image: url('garden.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+  border-radius: 12px;
+  margin-top: 20px;
 }
-@keyframes pulseGlow {
-  0% { filter: drop-shadow(0 0 6px gold); }
-  50% { filter: drop-shadow(0 0 14px gold); }
-  100% { filter: drop-shadow(0 0 6px gold); }
+
+.home-background-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  border-radius: 12px;
 }
-.logo {
-  width: 140px;
-  border-radius: 50%;
-  animation: fadeIn 1s ease forwards, pulseGlow 4s ease-in-out infinite;
+
+/* 3) TEXT ON TOP */
+.home-hero {
+  position: relative;
+  background-image: url('garden.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 350px;
+  border-radius: 12px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 30px;
 }
-animation: fadeIn 1s ease forwards, pulseGlow 4s ease-in-out infinite;
+
+.hero-text {
+  color: white;
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.hero-sub {
+  color: #ddd;
+  font-size: 1.2rem;
+  margin-top: 8px;
+}
+
+/* 4) FADE EFFECT */
+.home-background-fade {
+  position: relative;
+  background-image: url('garden.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.home-background-fade::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, white);
+  border-radius: 0 0 12px 12px;
+}
+
+/* 5) SOFT BLUR */
+.home-background-blur {
+  background-image: url('garden.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+  border-radius: 12px;
+  margin-top: 20px;
+  filter: blur(2px) brightness(0.9);
+}
+
+/* 6) GLOW EFFECT */
+.home-background-glow {
+  background-image: url('garden.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4),
+              0 0 45px rgba(255, 215, 0, 0.25);
+}
+
+/* ------------------------------
+   ARTICLE PAGE STYLING
+------------------------------ */
+
+.article-page {
+  width: 90%;
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+.small-img {
+  width: 180px;
+  border-radius: 12px;
+  margin: 18px auto;
+  display: block;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+.side-img {
+  width: 160px;
+  border-radius: 12px;
+  float: right;
+  margin: 10px 0 10px 20px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+.image-caption {
+  font-size: 0.8rem;
+  color: #666;
+  text-align: center;
+  margin-top: -6px;
+  margin-bottom: 18px;
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  color: #777;
+}
